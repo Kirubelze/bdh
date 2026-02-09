@@ -1,77 +1,94 @@
 <!doctype html>
 <html lang="en" class="h-full">
- <head>
+
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BDH Cleaning — Professional Cleaning Services</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="/_sdk/element_sdk.js"></script>
-  <script src="/_sdk/data_sdk.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+    rel="stylesheet">
   <style>
     body {
       box-sizing: border-box;
       font-family: 'Plus Jakarta Sans', sans-serif;
     }
-    
+
     .gradient-bg {
       background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f0fdf4 100%);
     }
-    
+
     .sparkle-effect {
       animation: sparkle 2s ease-in-out infinite;
     }
-    
+
     @keyframes sparkle {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.8; transform: scale(1.1); }
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.8;
+        transform: scale(1.1);
+      }
     }
-    
+
     .float-animation {
       animation: float 6s ease-in-out infinite;
     }
-    
+
     @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
     }
-    
+
     .card-hover {
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    
+
     .card-hover:hover {
       transform: translateY(-4px);
       box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.1);
     }
-    
+
     .btn-primary {
       background: linear-gradient(135deg, #10b981 0%, #059669 100%);
       transition: all 0.3s ease;
     }
-    
+
     .btn-primary:hover {
       background: linear-gradient(135deg, #059669 0%, #047857 100%);
       transform: translateY(-2px);
       box-shadow: 0 10px 30px -5px rgba(16, 185, 129, 0.4);
     }
-    
+
     .testimonial-card {
       background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
     }
-    
+
     .form-input:focus {
       border-color: #10b981;
       box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
     }
-    
+
     .check-item {
       position: relative;
       padding-left: 2rem;
     }
-    
+
     .check-item::before {
       content: '✔';
       position: absolute;
@@ -88,9 +105,19 @@
     }
 
     @keyframes bubble-float {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      33% { transform: translateY(-15px) rotate(5deg); }
-      66% { transform: translateY(10px) rotate(-5deg); }
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      33% {
+        transform: translateY(-15px) rotate(5deg);
+      }
+
+      66% {
+        transform: translateY(10px) rotate(-5deg);
+      }
     }
 
     .service-icon {
@@ -107,297 +134,417 @@
     }
 
     @keyframes slideIn {
-      from { transform: translateY(100%); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+      from {
+        transform: translateY(100%);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
   </style>
-  <style>@view-transition { navigation: auto; }</style>
- </head>
- <body class="h-full">
+  <style>
+    @view-transition {
+      navigation: auto;
+    }
+  </style>
+</head>
+
+<body class="h-full">
   <div id="app-wrapper" class="w-full h-full overflow-auto"><!-- Hero Section -->
-   <section class="gradient-bg relative overflow-hidden"><!-- Decorative bubbles -->
-    <div class="bubble" style="width: 100px; height: 100px; top: 10%; left: 5%; animation-delay: 0s;"></div>
-    <div class="bubble" style="width: 60px; height: 60px; top: 60%; left: 15%; animation-delay: 2s;"></div>
-    <div class="bubble" style="width: 80px; height: 80px; top: 20%; right: 10%; animation-delay: 4s;"></div>
-    <div class="bubble" style="width: 50px; height: 50px; top: 70%; right: 20%; animation-delay: 1s;"></div>
-    <div class="max-w-6xl mx-auto px-6 py-20 md:py-32 relative z-10">
-     <div class="text-center max-w-3xl mx-auto">
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm shadow-sm mb-8"><span class="sparkle-effect text-2xl">✨</span> <span class="text-sm font-medium text-gray-600">Professional Cleaning Services</span>
-      </div>
-      <h1 id="hero-headline" class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6">A Cleaner Home. Less Stress. More Time.</h1>
-      <p id="hero-subheadline" class="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">BDH Cleaning delivers reliable, professional cleaning services you can trust — so you can focus on what matters most.</p><button onclick="scrollToBooking()" class="btn-primary inline-flex items-center gap-3 px-8 py-4 rounded-full text-white font-semibold text-lg shadow-lg"> <span class="w-3 h-3 bg-white rounded-full"></span> Book a Cleaning </button>
-     </div><!-- Floating cleaning illustration -->
-     <div class="float-animation absolute bottom-10 right-10 hidden lg:block opacity-20">
-      <svg width="120" height="120" viewbox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="1.5"><path d="M3 6h18M3 6v14a2 2 0 002 2h14a2 2 0 002-2V6M3 6l3-4h12l3 4M10 11v6M14 11v6" />
-      </svg>
-     </div>
-    </div>
-   </section><!-- Services Section -->
-   <section class="bg-white py-20 md:py-28">
-    <div class="max-w-6xl mx-auto px-6">
-     <div class="text-center mb-16"><span class="inline-block px-4 py-1.5 bg-emerald-50 text-emerald-600 rounded-full text-sm font-semibold mb-4">Our Services</span>
-      <h2 id="services-title" class="text-3xl md:text-4xl font-bold text-gray-900">Services We Offer</h2>
-     </div>
-     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"><!-- Service Card 1 -->
-      <div class="card-hover bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
-       <div class="service-icon w-14 h-14 rounded-xl flex items-center justify-center mb-4">
-        <svg class="w-7 h-7 text-emerald-500" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-        </svg>
-       </div>
-       <h3 class="text-xl font-bold text-gray-900 mb-2">Residential Cleaning</h3>
-       <p class="text-gray-600">Keep your home fresh, clean, and comfortable week after week.</p>
-      </div><!-- Service Card 2 -->
-      <div class="card-hover bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
-       <div class="service-icon w-14 h-14 rounded-xl flex items-center justify-center mb-4">
-        <svg class="w-7 h-7 text-emerald-500" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-        </svg>
-       </div>
-       <h3 class="text-xl font-bold text-gray-900 mb-2">Deep Cleaning</h3>
-       <p class="text-gray-600">Perfect for a full reset — detailed cleaning that reaches every corner.</p>
-      </div><!-- Service Card 3 -->
-      <div class="card-hover bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
-       <div class="service-icon w-14 h-14 rounded-xl flex items-center justify-center mb-4">
-        <svg class="w-7 h-7 text-emerald-500" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-        </svg>
-       </div>
-       <h3 class="text-xl font-bold text-gray-900 mb-2">Office / Commercial</h3>
-       <p class="text-gray-600">A clean workspace that boosts productivity and leaves a great impression.</p>
-      </div><!-- Service Card 4 -->
-      <div class="card-hover bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
-       <div class="service-icon w-14 h-14 rounded-xl flex items-center justify-center mb-4">
-        <svg class="w-7 h-7 text-emerald-500" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-        </svg>
-       </div>
-       <h3 class="text-xl font-bold text-gray-900 mb-2">Move-In / Move-Out</h3>
-       <p class="text-gray-600">Leave your old place spotless or move into a perfectly clean space.</p>
-      </div><!-- Service Card 5 -->
-      <div class="card-hover bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
-       <div class="service-icon w-14 h-14 rounded-xl flex items-center justify-center mb-4">
-        <svg class="w-7 h-7 text-emerald-500" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-        </svg>
-       </div>
-       <h3 class="text-xl font-bold text-gray-900 mb-2">Post-Construction</h3>
-       <p class="text-gray-600">Dust, debris, and mess cleared fast after renovations.</p>
-      </div><!-- Service Card 6 -->
-      <div class="card-hover bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
-       <div class="service-icon w-14 h-14 rounded-xl flex items-center justify-center mb-4">
-        <svg class="w-7 h-7 text-emerald-500" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-        </svg>
-       </div>
-       <h3 class="text-xl font-bold text-gray-900 mb-2">Custom Cleaning</h3>
-       <p class="text-gray-600">Tell us what you need — we tailor the cleaning to you.</p>
-      </div>
-     </div>
-    </div>
-   </section><!-- Why Choose Us Section -->
-   <section class="bg-gradient-to-br from-gray-50 to-emerald-50/30 py-20 md:py-28">
-    <div class="max-w-6xl mx-auto px-6">
-     <div class="grid lg:grid-cols-2 gap-12 items-center">
-      <div><span class="inline-block px-4 py-1.5 bg-white text-emerald-600 rounded-full text-sm font-semibold mb-4 shadow-sm">Why Us</span>
-       <h2 id="why-title" class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Why Choose BDH Cleaning</h2>
-       <div class="space-y-5">
-        <div class="flex items-start gap-4">
-         <div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-          <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+    <section class="gradient-bg relative overflow-hidden"><!-- Decorative bubbles -->
+      <div class="bubble" style="width: 100px; height: 100px; top: 10%; left: 5%; animation-delay: 0s;"></div>
+      <div class="bubble" style="width: 60px; height: 60px; top: 60%; left: 15%; animation-delay: 2s;"></div>
+      <div class="bubble" style="width: 80px; height: 80px; top: 20%; right: 10%; animation-delay: 4s;"></div>
+      <div class="bubble" style="width: 50px; height: 50px; top: 70%; right: 20%; animation-delay: 1s;"></div>
+      <div class="max-w-6xl mx-auto px-6 py-20 md:py-32 relative z-10">
+        <div class="text-center max-w-3xl mx-auto">
+          <div
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm shadow-sm mb-8">
+            <span class="sparkle-effect text-2xl">✨</span> <span class="text-sm font-medium text-gray-600">Professional
+              Cleaning Services</span>
+          </div>
+          <h1 id="hero-headline"
+            class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6">A Cleaner Home.
+            Less Stress. More Time.</h1>
+          <p id="hero-subheadline" class="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">BDH
+            Cleaning delivers reliable, professional cleaning services you can trust — so you can focus on what matters
+            most.</p><button onclick="scrollToBooking()"
+            class="btn-primary inline-flex items-center gap-3 px-8 py-4 rounded-full text-white font-semibold text-lg shadow-lg">
+            <span class="w-3 h-3 bg-white rounded-full"></span> Book a Cleaning </button>
+        </div><!-- Floating cleaning illustration -->
+        <div class="float-animation absolute bottom-10 right-10 hidden lg:block opacity-20">
+          <svg width="120" height="120" viewbox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="1.5">
+            <path d="M3 6h18M3 6v14a2 2 0 002 2h14a2 2 0 002-2V6M3 6l3-4h12l3 4M10 11v6M14 11v6" />
           </svg>
-         </div>
-         <div>
-          <h4 class="font-semibold text-gray-900 text-lg">Trusted &amp; Reliable Professionals</h4>
-          <p class="text-gray-600 mt-1">Background-checked, trained, and committed to excellence.</p>
-         </div>
         </div>
-        <div class="flex items-start gap-4">
-         <div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-          <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-          </svg>
-         </div>
-         <div>
-          <h4 class="font-semibold text-gray-900 text-lg">Affordable, Transparent Pricing</h4>
-          <p class="text-gray-600 mt-1">No hidden fees. Know exactly what you're paying for.</p>
-         </div>
-        </div>
-        <div class="flex items-start gap-4">
-         <div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-          <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-          </svg>
-         </div>
-         <div>
-          <h4 class="font-semibold text-gray-900 text-lg">Attention to Detail, Every Visit</h4>
-          <p class="text-gray-600 mt-1">We don't cut corners — every clean is thorough.</p>
-         </div>
-        </div>
-        <div class="flex items-start gap-4">
-         <div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-          <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-          </svg>
-         </div>
-         <div>
-          <h4 class="font-semibold text-gray-900 text-lg">Flexible Scheduling</h4>
-          <p class="text-gray-600 mt-1">Book when it works for you — we adapt to your life.</p>
-         </div>
-        </div>
-       </div>
-       <p id="why-tagline" class="mt-8 text-lg font-semibold text-emerald-600">Clean results. No stress. No surprises.</p>
       </div>
-      <div class="relative">
-       <div class="bg-white rounded-3xl p-8 shadow-xl">
-        <div class="grid grid-cols-2 gap-6">
-         <div class="text-center p-6 bg-emerald-50 rounded-2xl">
-          <div class="text-4xl font-bold text-emerald-600 mb-1">
-           500+
-          </div>
-          <div class="text-gray-600 text-sm">
-           Happy Homes
-          </div>
-         </div>
-         <div class="text-center p-6 bg-sky-50 rounded-2xl">
-          <div class="text-4xl font-bold text-sky-600 mb-1">
-           5★
-          </div>
-          <div class="text-gray-600 text-sm">
-           Average Rating
-          </div>
-         </div>
-         <div class="text-center p-6 bg-amber-50 rounded-2xl">
-          <div class="text-4xl font-bold text-amber-600 mb-1">
-           98%
-          </div>
-          <div class="text-gray-600 text-sm">
-           Return Clients
-          </div>
-         </div>
-         <div class="text-center p-6 bg-purple-50 rounded-2xl">
-          <div class="text-4xl font-bold text-purple-600 mb-1">
-           24hr
-          </div>
-          <div class="text-gray-600 text-sm">
-           Quick Response
-          </div>
-         </div>
+    </section><!-- Services Section -->
+    <section class="bg-white py-20 md:py-28">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16"><span
+            class="inline-block px-4 py-1.5 bg-emerald-50 text-emerald-600 rounded-full text-sm font-semibold mb-4">Our
+            Services</span>
+          <h2 id="services-title" class="text-3xl md:text-4xl font-bold text-gray-900">Services We Offer</h2>
         </div>
-       </div>
-       <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-emerald-100 rounded-full -z-10"></div>
-       <div class="absolute -top-4 -left-4 w-24 h-24 bg-sky-100 rounded-full -z-10"></div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"><!-- Service Card 1 -->
+          <div class="card-hover bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+            <div class="service-icon w-14 h-14 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-7 h-7 text-emerald-500" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Residential Cleaning</h3>
+            <p class="text-gray-600">Keep your home fresh, clean, and comfortable week after week.</p>
+          </div><!-- Service Card 2 -->
+          <div class="card-hover bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+            <div class="service-icon w-14 h-14 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-7 h-7 text-emerald-500" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Deep Cleaning</h3>
+            <p class="text-gray-600">Perfect for a full reset — detailed cleaning that reaches every corner.</p>
+          </div><!-- Service Card 3 -->
+          <div class="card-hover bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+            <div class="service-icon w-14 h-14 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-7 h-7 text-emerald-500" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Office / Commercial</h3>
+            <p class="text-gray-600">A clean workspace that boosts productivity and leaves a great impression.</p>
+          </div><!-- Service Card 4 -->
+          <div class="card-hover bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+            <div class="service-icon w-14 h-14 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-7 h-7 text-emerald-500" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Move-In / Move-Out</h3>
+            <p class="text-gray-600">Leave your old place spotless or move into a perfectly clean space.</p>
+          </div><!-- Service Card 5 -->
+          <div class="card-hover bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+            <div class="service-icon w-14 h-14 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-7 h-7 text-emerald-500" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Post-Construction</h3>
+            <p class="text-gray-600">Dust, debris, and mess cleared fast after renovations.</p>
+          </div><!-- Service Card 6 -->
+          <div class="card-hover bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+            <div class="service-icon w-14 h-14 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-7 h-7 text-emerald-500" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Custom Cleaning</h3>
+            <p class="text-gray-600">Tell us what you need — we tailor the cleaning to you.</p>
+          </div>
+        </div>
       </div>
-     </div>
-    </div>
-   </section><!-- Booking Section -->
-   <section id="booking-section" class="bg-white py-20 md:py-28">
-    <div class="max-w-3xl mx-auto px-6">
-     <div class="text-center mb-12"><span class="inline-block px-4 py-1.5 bg-emerald-50 text-emerald-600 rounded-full text-sm font-semibold mb-4">Book Now</span>
-      <h2 id="booking-title" class="text-3xl md:text-4xl font-bold text-gray-900">Request a Cleaning Appointment</h2>
-     </div>
-     <form id="booking-form" class="bg-gradient-to-br from-gray-50 to-emerald-50/20 rounded-3xl p-8 md:p-10 shadow-sm border border-gray-100">
-      <div class="space-y-6"><!-- Name -->
-       <div><label for="full-name" class="block text-sm font-semibold text-gray-700 mb-2">Full Name *</label> <input type="text" id="full-name" name="full-name" required class="form-input w-full px-4 py-3 border border-gray-200 rounded-xl bg-white focus:outline-none transition-all" placeholder="Enter your full name">
-       </div><!-- Phone & Email Row -->
-       <div class="grid md:grid-cols-2 gap-6">
-        <div><label for="phone" class="block text-sm font-semibold text-gray-700 mb-2">Phone Number *</label> <input type="tel" id="phone" name="phone" required class="form-input w-full px-4 py-3 border border-gray-200 rounded-xl bg-white focus:outline-none transition-all" placeholder="(555) 123-4567">
+    </section><!-- Why Choose Us Section -->
+    <section class="bg-gradient-to-br from-gray-50 to-emerald-50/30 py-20 md:py-28">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div><span
+              class="inline-block px-4 py-1.5 bg-white text-emerald-600 rounded-full text-sm font-semibold mb-4 shadow-sm">Why
+              Us</span>
+            <h2 id="why-title" class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Why Choose BDH Cleaning</h2>
+            <div class="space-y-5">
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewbox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 text-lg">Trusted &amp; Reliable Professionals</h4>
+                  <p class="text-gray-600 mt-1">Background-checked, trained, and committed to excellence.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewbox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 text-lg">Affordable, Transparent Pricing</h4>
+                  <p class="text-gray-600 mt-1">No hidden fees. Know exactly what you're paying for.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewbox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 text-lg">Attention to Detail, Every Visit</h4>
+                  <p class="text-gray-600 mt-1">We don't cut corners — every clean is thorough.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewbox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 text-lg">Flexible Scheduling</h4>
+                  <p class="text-gray-600 mt-1">Book when it works for you — we adapt to your life.</p>
+                </div>
+              </div>
+            </div>
+            <p id="why-tagline" class="mt-8 text-lg font-semibold text-emerald-600">Clean results. No stress. No
+              surprises.</p>
+          </div>
+          <div class="relative">
+            <div class="bg-white rounded-3xl p-8 shadow-xl">
+              <div class="grid grid-cols-2 gap-6">
+                <div class="text-center p-6 bg-emerald-50 rounded-2xl">
+                  <div class="text-4xl font-bold text-emerald-600 mb-1">
+                    500+
+                  </div>
+                  <div class="text-gray-600 text-sm">
+                    Happy Homes
+                  </div>
+                </div>
+                <div class="text-center p-6 bg-sky-50 rounded-2xl">
+                  <div class="text-4xl font-bold text-sky-600 mb-1">
+                    5★
+                  </div>
+                  <div class="text-gray-600 text-sm">
+                    Average Rating
+                  </div>
+                </div>
+                <div class="text-center p-6 bg-amber-50 rounded-2xl">
+                  <div class="text-4xl font-bold text-amber-600 mb-1">
+                    98%
+                  </div>
+                  <div class="text-gray-600 text-sm">
+                    Return Clients
+                  </div>
+                </div>
+                <div class="text-center p-6 bg-purple-50 rounded-2xl">
+                  <div class="text-4xl font-bold text-purple-600 mb-1">
+                    24hr
+                  </div>
+                  <div class="text-gray-600 text-sm">
+                    Quick Response
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-emerald-100 rounded-full -z-10"></div>
+            <div class="absolute -top-4 -left-4 w-24 h-24 bg-sky-100 rounded-full -z-10"></div>
+          </div>
         </div>
-        <div><label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email Address *</label> <input type="email" id="email" name="email" required class="form-input w-full px-4 py-3 border border-gray-200 rounded-xl bg-white focus:outline-none transition-all" placeholder="you@example.com">
-        </div>
-       </div><!-- Address -->
-       <div><label for="address" class="block text-sm font-semibold text-gray-700 mb-2">Location / Address *</label> <input type="text" id="address" name="address" required class="form-input w-full px-4 py-3 border border-gray-200 rounded-xl bg-white focus:outline-none transition-all" placeholder="123 Main Street, City, State">
-       </div><!-- Services -->
-       <div><label class="block text-sm font-semibold text-gray-700 mb-3">Service Needed *</label>
-        <div class="grid md:grid-cols-2 gap-3"><label class="flex items-center gap-3 p-3 bg-white border border-gray-200 rounded-xl cursor-pointer hover:border-emerald-300 transition-colors"> <input type="checkbox" name="service-residential" class="w-5 h-5 text-emerald-500 rounded focus:ring-emerald-500"> <span class="text-gray-700">Residential Cleaning</span> </label> <label class="flex items-center gap-3 p-3 bg-white border border-gray-200 rounded-xl cursor-pointer hover:border-emerald-300 transition-colors"> <input type="checkbox" name="service-deep" class="w-5 h-5 text-emerald-500 rounded focus:ring-emerald-500"> <span class="text-gray-700">Deep Cleaning</span> </label> <label class="flex items-center gap-3 p-3 bg-white border border-gray-200 rounded-xl cursor-pointer hover:border-emerald-300 transition-colors"> <input type="checkbox" name="service-office" class="w-5 h-5 text-emerald-500 rounded focus:ring-emerald-500"> <span class="text-gray-700">Office / Commercial</span> </label> <label class="flex items-center gap-3 p-3 bg-white border border-gray-200 rounded-xl cursor-pointer hover:border-emerald-300 transition-colors"> <input type="checkbox" name="service-move" class="w-5 h-5 text-emerald-500 rounded focus:ring-emerald-500"> <span class="text-gray-700">Move-In / Move-Out</span> </label> <label class="flex items-center gap-3 p-3 bg-white border border-gray-200 rounded-xl cursor-pointer hover:border-emerald-300 transition-colors"> <input type="checkbox" name="service-construction" class="w-5 h-5 text-emerald-500 rounded focus:ring-emerald-500"> <span class="text-gray-700">Post-Construction</span> </label> <label class="flex items-center gap-3 p-3 bg-white border border-gray-200 rounded-xl cursor-pointer hover:border-emerald-300 transition-colors"> <input type="checkbox" name="service-custom" class="w-5 h-5 text-emerald-500 rounded focus:ring-emerald-500"> <span class="text-gray-700">Custom Cleaning</span> </label>
-        </div>
-       </div><!-- Message -->
-       <div><label for="message" class="block text-sm font-semibold text-gray-700 mb-2">Optional Message</label> <textarea id="message" name="message" rows="4" class="form-input w-full px-4 py-3 border border-gray-200 rounded-xl bg-white focus:outline-none transition-all resize-none" placeholder="Tell us about any special requests or details..."></textarea>
-       </div><!-- Submit Button --> <button type="submit" id="submit-btn" class="btn-primary w-full py-4 rounded-xl text-white font-semibold text-lg flex items-center justify-center gap-3"> <span class="w-3 h-3 bg-white rounded-full"></span> <span id="submit-text">Request a Cleaning</span> </button>
-       <p class="text-center text-sm text-gray-500 mt-4">We'll contact you shortly to confirm your booking.</p>
       </div>
-     </form>
-    </div>
-   </section><!-- Testimonials Section -->
-   <section class="bg-gradient-to-br from-emerald-50 to-sky-50 py-20 md:py-28">
-    <div class="max-w-6xl mx-auto px-6">
-     <div class="text-center mb-12"><span class="inline-block px-4 py-1.5 bg-white text-emerald-600 rounded-full text-sm font-semibold mb-4 shadow-sm">Testimonials</span>
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900">What Our Clients Say</h2>
-     </div>
-     <div class="grid md:grid-cols-3 gap-6">
-      <div class="testimonial-card rounded-2xl p-6 shadow-sm border border-gray-100">
-       <div class="flex items-center gap-1 mb-4"><span class="text-amber-400 text-xl">⭐</span> <span class="text-amber-400 text-xl">⭐</span> <span class="text-amber-400 text-xl">⭐</span> <span class="text-amber-400 text-xl">⭐</span> <span class="text-amber-400 text-xl">⭐</span>
-       </div>
-       <p class="text-gray-700 mb-4 italic">"Professional, on time, and extremely thorough. I couldn't be happier with BDH Cleaning!"</p>
-       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold">
-         S
+    </section><!-- Booking Section -->
+    <section id="booking-section" class="bg-white py-20 md:py-28">
+      <div class="max-w-3xl mx-auto px-6">
+        <div class="text-center mb-12"><span
+            class="inline-block px-4 py-1.5 bg-emerald-50 text-emerald-600 rounded-full text-sm font-semibold mb-4">Book
+            Now</span>
+          <h2 id="booking-title" class="text-3xl md:text-4xl font-bold text-gray-900">Request a Cleaning Appointment
+          </h2>
         </div>
-        <div>
-         <div class="font-semibold text-gray-900">
-          Sarah M.
-         </div>
-         <div class="text-sm text-gray-500">
-          Homeowner
-         </div>
-        </div>
-       </div>
+        <form id="booking-form"
+          class="bg-gradient-to-br from-gray-50 to-emerald-50/20 rounded-3xl p-8 md:p-10 shadow-sm border border-gray-100">
+          <div class="space-y-6"><!-- Name -->
+            <div><label for="full-name" class="block text-sm font-semibold text-gray-700 mb-2">Full Name *</label>
+              <input type="text" id="full-name" name="full-name" required
+                class="form-input w-full px-4 py-3 border border-gray-200 rounded-xl bg-white focus:outline-none transition-all"
+                placeholder="Enter your full name">
+            </div><!-- Phone & Email Row -->
+            <div class="grid md:grid-cols-2 gap-6">
+              <div><label for="phone" class="block text-sm font-semibold text-gray-700 mb-2">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" required
+                  class="form-input w-full px-4 py-3 border border-gray-200 rounded-xl bg-white focus:outline-none transition-all"
+                  placeholder="(555) 123-4567">
+              </div>
+              <div><label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email Address *</label>
+                <input type="email" id="email" name="email" required
+                  class="form-input w-full px-4 py-3 border border-gray-200 rounded-xl bg-white focus:outline-none transition-all"
+                  placeholder="you@example.com">
+              </div>
+            </div><!-- Address -->
+            <div><label for="address" class="block text-sm font-semibold text-gray-700 mb-2">Location / Address
+                *</label> <input type="text" id="address" name="address" required
+                class="form-input w-full px-4 py-3 border border-gray-200 rounded-xl bg-white focus:outline-none transition-all"
+                placeholder="123 Main Street, City, State">
+            </div><!-- Services -->
+            <div><label class="block text-sm font-semibold text-gray-700 mb-3">Service Needed *</label>
+              <div class="grid md:grid-cols-2 gap-3"><label
+                  class="flex items-center gap-3 p-3 bg-white border border-gray-200 rounded-xl cursor-pointer hover:border-emerald-300 transition-colors">
+                  <input type="checkbox" name="service-residential"
+                    class="w-5 h-5 text-emerald-500 rounded focus:ring-emerald-500"> <span
+                    class="text-gray-700">Residential Cleaning</span> </label> <label
+                  class="flex items-center gap-3 p-3 bg-white border border-gray-200 rounded-xl cursor-pointer hover:border-emerald-300 transition-colors">
+                  <input type="checkbox" name="service-deep"
+                    class="w-5 h-5 text-emerald-500 rounded focus:ring-emerald-500"> <span class="text-gray-700">Deep
+                    Cleaning</span> </label> <label
+                  class="flex items-center gap-3 p-3 bg-white border border-gray-200 rounded-xl cursor-pointer hover:border-emerald-300 transition-colors">
+                  <input type="checkbox" name="service-office"
+                    class="w-5 h-5 text-emerald-500 rounded focus:ring-emerald-500"> <span class="text-gray-700">Office
+                    / Commercial</span> </label> <label
+                  class="flex items-center gap-3 p-3 bg-white border border-gray-200 rounded-xl cursor-pointer hover:border-emerald-300 transition-colors">
+                  <input type="checkbox" name="service-move"
+                    class="w-5 h-5 text-emerald-500 rounded focus:ring-emerald-500"> <span class="text-gray-700">Move-In
+                    / Move-Out</span> </label> <label
+                  class="flex items-center gap-3 p-3 bg-white border border-gray-200 rounded-xl cursor-pointer hover:border-emerald-300 transition-colors">
+                  <input type="checkbox" name="service-construction"
+                    class="w-5 h-5 text-emerald-500 rounded focus:ring-emerald-500"> <span
+                    class="text-gray-700">Post-Construction</span> </label> <label
+                  class="flex items-center gap-3 p-3 bg-white border border-gray-200 rounded-xl cursor-pointer hover:border-emerald-300 transition-colors">
+                  <input type="checkbox" name="service-custom"
+                    class="w-5 h-5 text-emerald-500 rounded focus:ring-emerald-500"> <span class="text-gray-700">Custom
+                    Cleaning</span> </label>
+              </div>
+            </div><!-- Message -->
+            <div><label for="message" class="block text-sm font-semibold text-gray-700 mb-2">Optional Message</label>
+              <textarea id="message" name="message" rows="4"
+                class="form-input w-full px-4 py-3 border border-gray-200 rounded-xl bg-white focus:outline-none transition-all resize-none"
+                placeholder="Tell us about any special requests or details..."></textarea>
+            </div><!-- Submit Button --> <button type="submit" id="submit-btn"
+              class="btn-primary w-full py-4 rounded-xl text-white font-semibold text-lg flex items-center justify-center gap-3">
+              <span class="w-3 h-3 bg-white rounded-full"></span> <span id="submit-text">Request a Cleaning</span>
+            </button>
+            <p class="text-center text-sm text-gray-500 mt-4">We'll contact you shortly to confirm your booking.</p>
+          </div>
+        </form>
       </div>
-      <div class="testimonial-card rounded-2xl p-6 shadow-sm border border-gray-100">
-       <div class="flex items-center gap-1 mb-4"><span class="text-amber-400 text-xl">⭐</span> <span class="text-amber-400 text-xl">⭐</span> <span class="text-amber-400 text-xl">⭐</span> <span class="text-amber-400 text-xl">⭐</span> <span class="text-amber-400 text-xl">⭐</span>
-       </div>
-       <p class="text-gray-700 mb-4 italic">"Our home has never looked better. The attention to detail is incredible!"</p>
-       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-full bg-sky-100 flex items-center justify-center text-sky-600 font-bold">
-         J
+      <section class="bg-gradient-to-br from-emerald-50 to-sky-50 py-20 md:py-28">
+        <div class="max-w-6xl mx-auto px-6">
+          <div class="text-center mb-12"><span
+              class="inline-block px-4 py-1.5 bg-white text-emerald-600 rounded-full text-sm font-semibold mb-4 shadow-sm">Testimonials</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">What Our Clients Say</h2>
+          </div>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="testimonial-card rounded-2xl p-6 shadow-sm border border-gray-100">
+              <div class="flex items-center gap-1 mb-4"><span class="text-amber-400 text-xl">⭐</span> <span
+                  class="text-amber-400 text-xl">⭐</span> <span class="text-amber-400 text-xl">⭐</span> <span
+                  class="text-amber-400 text-xl">⭐</span> <span class="text-amber-400 text-xl">⭐</span>
+              </div>
+              <p class="text-gray-700 mb-4 italic">"Professional, on time, and extremely thorough. I couldn't be happier
+                with BDH Cleaning!"</p>
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold">
+                  S
+                </div>
+                <div>
+                  <div class="font-semibold text-gray-900">
+                    Sarah M.
+                  </div>
+                  <div class="text-sm text-gray-500">
+                    Homeowner
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card rounded-2xl p-6 shadow-sm border border-gray-100">
+              <div class="flex items-center gap-1 mb-4"><span class="text-amber-400 text-xl">⭐</span> <span
+                  class="text-amber-400 text-xl">⭐</span> <span class="text-amber-400 text-xl">⭐</span> <span
+                  class="text-amber-400 text-xl">⭐</span> <span class="text-amber-400 text-xl">⭐</span>
+              </div>
+              <p class="text-gray-700 mb-4 italic">"Our home has never looked better. The attention to detail is
+                incredible!"</p>
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-sky-100 flex items-center justify-center text-sky-600 font-bold">
+                  J
+                </div>
+                <div>
+                  <div class="font-semibold text-gray-900">
+                    James &amp; Lisa T.
+                  </div>
+                  <div class="text-sm text-gray-500">
+                    Weekly Service
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card rounded-2xl p-6 shadow-sm border border-gray-100">
+              <div class="flex items-center gap-1 mb-4"><span class="text-amber-400 text-xl">⭐</span> <span
+                  class="text-amber-400 text-xl">⭐</span> <span class="text-amber-400 text-xl">⭐</span> <span
+                  class="text-amber-400 text-xl">⭐</span> <span class="text-amber-400 text-xl">⭐</span>
+              </div>
+              <p class="text-gray-700 mb-4 italic">"Reliable service I can count on. They've been cleaning our office
+                for
+                2 years now."</p>
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-bold">
+                  M
+                </div>
+                <div>
+                  <div class="font-semibold text-gray-900">
+                    Michael R.
+                  </div>
+                  <div class="text-sm text-gray-500">
+                    Business Owner
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div>
-         <div class="font-semibold text-gray-900">
-          James &amp; Lisa T.
-         </div>
-         <div class="text-sm text-gray-500">
-          Weekly Service
-         </div>
+      </section><!-- Final CTA Section -->
+      <section class="bg-gradient-to-r from-emerald-600 to-teal-600 py-20 md:py-28">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+          <div class="inline-block mb-6"><span class="text-5xl">🏠</span>
+          </div>
+          <h2 id="final-cta-headline" class="text-3xl md:text-4xl font-bold text-white mb-4">Let us handle the cleaning
+            for you.</h2>
+          <p id="final-cta-subtext" class="text-xl text-emerald-100 mb-10">Enjoy a cleaner space without the hassle.</p>
+          <button onclick="scrollToBooking()"
+            class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-emerald-600 font-semibold text-lg shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+            <span class="w-3 h-3 bg-emerald-500 rounded-full"></span> Book a Cleaning </button>
         </div>
-       </div>
+      </section><!-- Footer -->
+      <footer class="bg-gray-900 py-12">
+        <div class="max-w-6xl mx-auto px-6">
+          <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-emerald-500 flex items-center justify-center"><span
+                  class="text-white font-bold text-lg">B</span>
+              </div><span class="text-white font-bold text-xl">BDH Cleaning</span>
+            </div>
+            <p class="text-gray-400 text-sm">© 2024 BDH Cleaning. All rights reserved.</p>
+          </div>
+        </div>
+      </footer><!-- Toast Notification -->
+      <div id="toast"
+        class="fixed bottom-6 left-1/2 -translate-x-1/2 px-6 py-4 bg-emerald-600 text-white rounded-xl shadow-lg hidden z-50">
+        <div class="flex items-center gap-3">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg><span id="toast-message">Request submitted successfully!</span>
+        </div>
       </div>
-      <div class="testimonial-card rounded-2xl p-6 shadow-sm border border-gray-100">
-       <div class="flex items-center gap-1 mb-4"><span class="text-amber-400 text-xl">⭐</span> <span class="text-amber-400 text-xl">⭐</span> <span class="text-amber-400 text-xl">⭐</span> <span class="text-amber-400 text-xl">⭐</span> <span class="text-amber-400 text-xl">⭐</span>
-       </div>
-       <p class="text-gray-700 mb-4 italic">"Reliable service I can count on. They've been cleaning our office for 2 years now."</p>
-       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-bold">
-         M
-        </div>
-        <div>
-         <div class="font-semibold text-gray-900">
-          Michael R.
-         </div>
-         <div class="text-sm text-gray-500">
-          Business Owner
-         </div>
-        </div>
-       </div>
-      </div>
-     </div>
-    </div>
-   </section><!-- Final CTA Section -->
-   <section class="bg-gradient-to-r from-emerald-600 to-teal-600 py-20 md:py-28">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-     <div class="inline-block mb-6"><span class="text-5xl">🏠</span>
-     </div>
-     <h2 id="final-cta-headline" class="text-3xl md:text-4xl font-bold text-white mb-4">Let us handle the cleaning for you.</h2>
-     <p id="final-cta-subtext" class="text-xl text-emerald-100 mb-10">Enjoy a cleaner space without the hassle.</p><button onclick="scrollToBooking()" class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-emerald-600 font-semibold text-lg shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"> <span class="w-3 h-3 bg-emerald-500 rounded-full"></span> Book a Cleaning </button>
-    </div>
-   </section><!-- Footer -->
-   <footer class="bg-gray-900 py-12">
-    <div class="max-w-6xl mx-auto px-6">
-     <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-      <div class="flex items-center gap-3">
-       <div class="w-10 h-10 rounded-xl bg-emerald-500 flex items-center justify-center"><span class="text-white font-bold text-lg">B</span>
-       </div><span class="text-white font-bold text-xl">BDH Cleaning</span>
-      </div>
-      <p class="text-gray-400 text-sm">© 2024 BDH Cleaning. All rights reserved.</p>
-     </div>
-    </div>
-   </footer><!-- Toast Notification -->
-   <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 px-6 py-4 bg-emerald-600 text-white rounded-xl shadow-lg hidden z-50">
-    <div class="flex items-center gap-3">
-     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-     </svg><span id="toast-message">Request submitted successfully!</span>
-    </div>
-   </div>
   </div>
   <script>
     // Default configuration
@@ -432,35 +579,27 @@
       toastMessage.textContent = message;
       toast.classList.remove('hidden');
       toast.classList.add('toast');
-      
+
       setTimeout(() => {
         toast.classList.add('hidden');
       }, 4000);
     }
 
-    // Data SDK Handler (write-only)
-    const dataHandler = {
-      onDataChanged(data) {
-        recordCount = data.length;
-      }
-    };
+    // Configuration for Google Sheets
+    // TODO: REPLACE THIS URL WITH YOUR DEPLOYED GOOGLE APPS SCRIPT WEB APP URL
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwHXBpwNOCDPeuCL9I822l9f1hkRNuJUEuh6E4mnvZsHX7o_IbgA_rosrhwUV4Vx7sS/exec';
 
     // Form submission handler
     async function handleFormSubmit(e) {
       e.preventDefault();
-      
-      if (recordCount >= 999) {
-        showToast('Maximum submissions reached. Please try again later.');
-        return;
-      }
-      
+
       const submitBtn = document.getElementById('submit-btn');
       const submitText = document.getElementById('submit-text');
-      
+
       // Show loading state
       submitBtn.disabled = true;
       submitText.textContent = 'Submitting...';
-      
+
       const formData = {
         full_name: document.getElementById('full-name').value,
         phone: document.getElementById('phone').value,
@@ -475,25 +614,42 @@
         message: document.getElementById('message').value || '',
         submitted_at: new Date().toISOString()
       };
-      
-      const result = await window.dataSdk.create(formData);
-      
-      // Reset button state
-      submitBtn.disabled = false;
-      submitText.textContent = 'Request a Cleaning';
-      
-      if (result.isOk) {
+
+      try {
+        if (GOOGLE_SCRIPT_URL === 'INSERT_YOUR_GOOGLE_SCRIPT_URL_HERE') {
+          throw new Error('Please configure the GOOGLE_SCRIPT_URL in index.html');
+        }
+
+        const response = await fetch(GOOGLE_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors', // Important for Google Apps Script
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        });
+
+        // With no-cors, we can't check response.ok or get JSON back easily used for validation,
+        // but it submits the data. Google Apps Script redirects which causes CORS issues without 'no-cors'.
+        // Assuming success if no network error thrown.
+
         showToast('Request submitted successfully! We\'ll contact you shortly.');
         document.getElementById('booking-form').reset();
-      } else {
-        showToast('Something went wrong. Please try again.');
+
+      } catch (error) {
+        console.error('Submission error:', error);
+        showToast('Something went wrong: ' + error.message);
+      } finally {
+        // Reset button state
+        submitBtn.disabled = false;
+        submitText.textContent = 'Request a Cleaning';
       }
     }
 
     // Update UI based on config
     async function onConfigChange(cfg) {
       config = { ...defaultConfig, ...cfg };
-      
+
       // Update text content
       document.getElementById('hero-headline').textContent = config.hero_headline;
       document.getElementById('hero-subheadline').textContent = config.hero_subheadline;
@@ -576,17 +732,16 @@
           mapToEditPanelValues
         });
       }
-      
-      // Initialize Data SDK
-      if (window.dataSdk) {
-        await window.dataSdk.init(dataHandler);
-      }
-      
+
+
+
       // Set up form handler
       document.getElementById('booking-form').addEventListener('submit', handleFormSubmit);
     }
 
     init();
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9cab103c860fdf75',t:'MTc3MDU1MzA0MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+  <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'9cab103c860fdf75',t:'MTc3MDU1MzA0MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+</body>
+
 </html>
